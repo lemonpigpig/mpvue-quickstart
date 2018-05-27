@@ -92,7 +92,8 @@ module.exports = {
     "test/unit/**/*": "test",
     "build/webpack.test.conf.js": "test",
     "test/e2e/**/*": "test",
-    "src/pages/counter/*": "vuex",
+    "src/pages/counter.vue": "vuex",
+    "src/store/*": "vuex"
   },
   // "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at http://mpvue.com"

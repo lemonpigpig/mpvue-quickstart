@@ -3,9 +3,15 @@
 // mpvue has been set in webpack.base.conf with an alias.
 {{/if_eq}}
 import Vue from 'vue'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-import App from './App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import App from '@/App'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{#vuex}}
+import store from '@/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuex}}
 
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{#vuex}}
+App.store = store{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+{{/vuex}}
 App.mpType = 'app'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 const app = new Vue(App){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
@@ -14,8 +20,7 @@ app.$mount(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 export default {
   // 这个字段走 app.json
   config: {
-    // 页面前带有 ^ 符号的，会被编译成首页，其他页面可以选填，我们会自动把 webpack entry 里面的入口页面加进去
-    pages: ['pages/logs/main', '^pages/index/main'],
+    pages: [],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

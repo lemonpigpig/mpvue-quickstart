@@ -19,7 +19,7 @@
       <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
     </form>
     {{#if vuex}}
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+    <a href="/pages/counter" class="counter">去往Vuex示例页面</a>
     {{/if}}
   </div>
 </template>
@@ -41,7 +41,7 @@ export default {
 
   methods: {
     bindViewTap{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-      const url = '../logs/main'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+      const url = './logs'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
       wx.navigateTo({ url }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
     },
     getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
